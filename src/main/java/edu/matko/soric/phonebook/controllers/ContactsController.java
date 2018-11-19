@@ -1,7 +1,7 @@
-package edu.matko.soric.demo.kontakti.aplikacija.controllers;
+package edu.matko.soric.phonebook.controllers;
 
-import edu.matko.soric.demo.kontakti.aplikacija.entities.Contact;
-import edu.matko.soric.demo.kontakti.aplikacija.services.ContactsService;
+import edu.matko.soric.phonebook.entities.Contact;
+import edu.matko.soric.phonebook.services.ContactsService;
 import org.apache.commons.validator.routines.EmailValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

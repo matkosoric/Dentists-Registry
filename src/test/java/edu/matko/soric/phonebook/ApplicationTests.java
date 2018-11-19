@@ -1,4 +1,4 @@
-package edu.matko.soric.demo.kontakti.aplikacija;
+package edu.matko.soric.phonebook;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,6 +1,6 @@
-package edu.matko.soric.demo.kontakti.aplikacija.services;
+package edu.matko.soric.phonebook.services;
 
-import edu.matko.soric.demo.kontakti.aplikacija.entities.Contact;
+import edu.matko.soric.phonebook.entities.Contact;
 
 import java.util.Optional;
 

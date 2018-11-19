@@ -1,4 +1,4 @@
-package edu.matko.soric.demo.kontakti.aplikacija.entities;
+package edu.matko.soric.phonebook.entities;
 
 import org.springframework.format.annotation.DateTimeFormat;
 

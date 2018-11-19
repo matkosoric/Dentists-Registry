@@ -1,7 +1,7 @@
-package edu.matko.soric.demo.kontakti.aplikacija.services;
+package edu.matko.soric.phonebook.services;
 
-import edu.matko.soric.demo.kontakti.aplikacija.entities.Contact;
-import edu.matko.soric.demo.kontakti.aplikacija.repositories.ContactsRepository;
+import edu.matko.soric.phonebook.entities.Contact;
+import edu.matko.soric.phonebook.repositories.ContactsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
