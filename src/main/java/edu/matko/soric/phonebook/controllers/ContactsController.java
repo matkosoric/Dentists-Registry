@@ -66,6 +66,16 @@ public class ContactsController {
         return "redirect:/contacts";
     }
 
+    @RequestMapping("/403")
+    public String error403() {
+        return "403";
+    }
+
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
+
 }
 
 
