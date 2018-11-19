@@ -71,7 +71,7 @@ public class ContactsController {
         return "403";
     }
 
-    @RequestMapping("/login")
+    @GetMapping("/login")
     public String login() {
         return "login";
     }
