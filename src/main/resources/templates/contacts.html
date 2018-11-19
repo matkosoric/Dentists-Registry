@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <title>Kontakti Aplikacija</title>
+    <title>Phonebook application</title>
 
     <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
     <link href= "https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
@@ -29,7 +29,7 @@
 
     <div id="header">
         <div id="logo">
-            <h1><a href="/">Aplikacija Kontakti</a></h1>
+            <h1><a href="/">Phonebook application</a></h1>
         </div>
 
     </div>
@@ -38,16 +38,16 @@
     <!--<div id="page">-->
         <div class="container" style="width:900px;" align="center">
             <div th:if="${not #lists.isEmpty(contacts)}">
-                <h2>Lista kontakata</h2>
+                <h2>List of entries</h2>
                 <table id="dataTable" class="table">
                     <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Ime</th>
-                        <th>Prezime</th>
-                        <th>Telefonski broj</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Phone number</th>
                         <th>E-mail</th>
-                        <th>Datum upisa</th>
+                        <th>Creation date</th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -62,13 +62,16 @@
                         <td th:text="${contact.email}"></td>
                         <td th:text="${contact.creationDate}"></td>
                         <td><a th:href="${ '/contact/' + contact.id}" class="btn btn-primary btn-sm btn-info">Info</a></td>
-                        <td><a th:href="${ '/contact/edit/' + contact.id}" class="btn btn-primary btn-sm btn-info">Uredi</a></td>
-                        <td><a th:href="${ '/contact/delete/' + contact.id}" class="delete btn btn-primary btn-sm btn-danger" type="button" data-title="Upozorenje!" >Obriši</a></td>
+                        <td><a th:href="${ '/contact/edit/' + contact.id}" class="btn btn-primary btn-sm btn-info">Edit</a></td>
+                        <td><a th:href="${ '/contact/delete/' + contact.id}" class="delete btn btn-primary btn-sm btn-danger" type="button" data-title="Warning!" >Delete</a></td>
                     </tr>
                     </tbody>
                 </table>
             </div>
             <br>
+
+            <a th:href="@{'/contact/new'}" class="btn btn-primary btn-sm btn-info">Add new entry</a>
+
         </div>
         <div id="content">
         </div>

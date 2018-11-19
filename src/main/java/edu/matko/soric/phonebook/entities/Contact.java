@@ -17,15 +17,15 @@ public class Contact {
     private Integer id;
 
     @NotNull
-    @Size(min=2, max=50, message = "Polje 'Ime' - neispravan broj znakova (2-50)")
+    @Size(min=2, max=50, message = "Field 'Name' - inadequate number of characters (2-50)")
     private String name;
-    @Size(min=2, max=50, message = "Polje 'Prezime' - neispravan broj znakova (2-50)")
+    @Size(min=2, max=50, message = "Field 'Surname' - inadequate number of characters  (2-50)")
     @NotNull
     private String surname;
-    @Size(min=5, max=25, message = "Polje 'Telefonski broj' - neispravan broj znakova (5-25)")
+    @Size(min=5, max=25, message = "Field 'Phone number' - inadequate number of characters  (5-25)")
     @NotNull
     private String phoneNumber;
-    @javax.validation.constraints.Email (message = "Polje 'E-mail' - neispravan format")
+    @javax.validation.constraints.Email (message = "Field 'E-mail' - inadequate formatting")
     private String email;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate creationDate;

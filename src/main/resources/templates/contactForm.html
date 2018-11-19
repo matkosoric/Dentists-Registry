@@ -30,12 +30,12 @@
 
     <div id="header">
         <div id="logo">
-            <h1><a href="/">Aplikacija Kontakti</a></h1>
+            <h1><a href="/">Phonebook Application</a></h1>
         </div>
     </div>
     <br>
     <br>
-    <h2>Uredi podatke o kontaktu</h2>
+    <h2>Edit details</h2>
 
     <div class="container" >
         <form action="#" th:action="@{|/contact/edit/{id}|}" th:object="${contact}" method="post">
@@ -47,18 +47,18 @@
                 <tr>
                     <td>Id: </td>
                     <!-- th:disabled="true" onemogućuje @ModelAttribute anotaciju -->
-                    <td><input id="unos_id" th:readonly="readonly" style="background-color: #EBEAE5;" type="text" th:field="*{id}" required="true" placeholder="...automatsko generiranje..."/></td>
+                    <td><input id="unos_id" th:readonly="readonly" style="background-color: #EBEAE5;" type="text" th:field="*{id}" required="true" placeholder="...automatically generated..."/></td>
                 </tr>
                 <tr>
-                    <td>Ime: </td>
+                    <td>Name: </td>
                     <td><input type="text" th:field="*{name}" required="true" /></td>
                 </tr>
                 <tr>
-                    <td>Prezime: </td>
+                    <td>Surname: </td>
                     <td><input type="text" th:field="*{surname}" required="true"/></td>
                 </tr>
                 <tr>
-                    <td>Telefonski broj: </td>
+                    <td>Phone number: </td>
                     <td><input type="text" th:field="*{phoneNumber}" required="true"/></td>
                 </tr>
                 <tr>
@@ -66,7 +66,7 @@
                     <td><input type="text" th:field="*{email}" /></td>
                 </tr>
                 <tr>
-                    <td>Datum upisa: </td>
+                    <td>Creation date: </td>
                     <td><input type="date"  th:field="*{creationDate}" disabled="true"/></td>
                 </tr>
             </table>
@@ -76,10 +76,10 @@
                 <p th:each="err : ${#fields.allErrors()}" th:text="${err}">...</p>
             </div>
 
-            <input type="submit" class="btn btn-primary btn-sm btn-info" value="Snimi" />
+            <input type="submit" class="btn btn-primary btn-sm btn-info" value="Save" />
             <a th:href="${ '/contact/edit/' + {id}}" class="btn btn-primary btn-sm btn-info">Reset</a>
-            <a th:href="@{/contacts}" class="btn btn-primary btn-sm btn-info">Odustani</a>
-            <a th:href="@{'/contact/new'}" class="btn btn-primary btn-sm btn-info">Dodaj novi kontakt</a>
+            <a th:href="@{/contacts}" class="btn btn-primary btn-sm btn-info">Cancel</a>
+            <a th:href="@{'/contact/new'}" class="btn btn-primary btn-sm btn-info">Add new entry</a>
         </form>
     </div>
 

@@ -8,13 +8,13 @@ $(document).ready(function() {
     } );
 
     $('a.delete').confirm({
-        content: "Odabrani kontakt bit će izbrisan !",
+        content: "Selected entry will be deleted!",
         columnClass: 'small/s',
         buttons: {
-                    'U redu': function () {
+                    'OK': function () {
                         location.href = this.$target.attr('href');
                     },
-                    'Odbaci ': function () {               }
+                    'Cancel ': function () {               }
         }
     });
 } );

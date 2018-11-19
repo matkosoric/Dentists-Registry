@@ -35,7 +35,7 @@
     </div>
     <br>
     <br>
-    <h2>Prikaz podataka</h2>
+    <h2>Entry details</h2>
 
     <div class="container" >
             <table align="center" width="100%">
@@ -48,15 +48,15 @@
                     <td><input type="text" th:field="${contact.id}" disabled="true" /></td>
                 </tr>
                 <tr>
-                    <td>Ime: </td>
+                    <td>Name: </td>
                     <td><input type="text" th:field="${contact.name}" disabled="true"/></td>
                 </tr>
                 <tr>
-                    <td>Prezime: </td>
+                    <td>Surname: </td>
                     <td><input type="text" th:field="${contact.surname}" disabled="true"/></td>
                 </tr>
                 <tr>
-                    <td>Telefonski broj: </td>
+                    <td>Phone number: </td>
                     <td><input type="text" th:field="${contact.phoneNumber}"  disabled="true"/></td>
                 </tr>
                 <tr>
@@ -64,16 +64,16 @@
                     <td><input type="text" th:field="${contact.email}"  disabled="true"/></td>
                 </tr>
                 <tr>
-                    <td>Datum upisa: </td>
+                    <td>Creation date: </td>
                     <td><input type="date" th:field="${contact.creationDate}" disabled="true"/></td>
                 </tr>
             </table>
 
             <br>
 
-        <a th:href="@{|/contact/edit/*{id}|}" class="btn btn-primary btn-sm btn-info">Uredi</a>
-        <a th:href="@{|/contact/delete/*{id}|}" class="delete btn btn-primary btn-sm btn-danger" data-title="Upozorenje!" >Obriši</a>
-        <a th:href="@{'/contact/new'}" class="btn btn-primary btn-sm btn-info">Dodaj novi kontakt</a>
+        <a th:href="@{|/contact/edit/*{id}|}" class="btn btn-primary btn-sm btn-info">Edit</a>
+        <a th:href="@{|/contact/delete/*{id}|}" class="delete btn btn-primary btn-sm btn-danger" data-title="Warning!" >Delete</a>
+        <a th:href="@{'/contact/new'}" class="btn btn-primary btn-sm btn-info">Add new entry</a>
 
         <br>
         <br>
