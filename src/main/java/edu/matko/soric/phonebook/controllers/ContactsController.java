@@ -52,7 +52,9 @@ public class ContactsController {
     public String saveContact ( @Valid @ModelAttribute("contact") Contact contact, BindingResult bindingResult, ModelMap model) {
 
         Integer id = contact.getId();
-        if (bindingResult.hasErrors() | EmailValidator.getInstance().isValid(contact.getEmail())) {
+        if (bindingResult.hasErrors()
+//                | EmailValidator.getInstance().isValid(contact.getEmail())
+        ) {
             model.addAttribute("id", id);
             return "contactForm";
         }
