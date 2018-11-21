@@ -2,7 +2,6 @@ package edu.matko.soric.phonebook.controllers;
 
 import edu.matko.soric.phonebook.entities.Contact;
 import edu.matko.soric.phonebook.services.ContactsService;
-import org.apache.commons.validator.routines.EmailValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -52,9 +51,7 @@ public class ContactsController {
     public String saveContact ( @Valid @ModelAttribute("contact") Contact contact, BindingResult bindingResult, ModelMap model) {
 
         Integer id = contact.getId();
-        if (bindingResult.hasErrors()
-//                | EmailValidator.getInstance().isValid(contact.getEmail())
-        ) {
+        if (bindingResult.hasErrors()) {
             model.addAttribute("id", id);
             return "contactForm";
         }
