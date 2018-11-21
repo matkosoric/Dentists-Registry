@@ -3,12 +3,17 @@ package edu.matko.soric.phonebook.controllers;
 import edu.matko.soric.phonebook.entities.Contact;
 import edu.matko.soric.phonebook.services.ContactsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 @Controller
@@ -68,6 +73,22 @@ public class ContactsController {
     @GetMapping("/login")
     public String login() {
         return "login";
+    }
+
+
+    @RequestMapping(value = {"/logout"}, method = RequestMethod.POST)
+    public String logoutDo(HttpServletRequest request, HttpServletResponse response){
+        HttpSession session;
+        SecurityContextHolder.clearContext();
+        session= request.getSession(false);
+        if(session != null) {
+            session.invalidate();
+        }
+        for(Cookie cookie : request.getCookies()) {
+            cookie.setMaxAge(0);
+        }
+
+        return "redirect:/login";
     }
 
 }

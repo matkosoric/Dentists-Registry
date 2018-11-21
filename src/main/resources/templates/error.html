@@ -5,12 +5,10 @@
 </head>
 <body>
 
-
 <div class="container">
 
     <div class="starter-template">
-
-        <h1>Error code: <span th:text="${errorInfo}"></span> </h1>
+        <h1>HTTP Error code: <span th:text="${errorInfo}"></span> </h1>
         <div th:inline="text">This error was encountered by the user: '[[${#httpServletRequest.remoteUser}]]' </div>
     </div>
 
