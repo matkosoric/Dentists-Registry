@@ -17,9 +17,11 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login")
+                .failureUrl("/login-error.html")
                 .permitAll()
                 .and()
                 .logout()
+                .logoutSuccessUrl("/login.html")
                 .permitAll();
 
     }

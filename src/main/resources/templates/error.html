@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+
+
+<div class="container">
+
+    <div class="starter-template">
+
+        <h1>Error code: <span th:text="${errorInfo}"></span> </h1>
+        <div th:inline="text">This error was encountered by the user: '[[${#httpServletRequest.remoteUser}]]' </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
+
