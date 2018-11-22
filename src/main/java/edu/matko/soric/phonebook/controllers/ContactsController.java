@@ -1,8 +1,13 @@
 package edu.matko.soric.phonebook.controllers;
 
 import edu.matko.soric.phonebook.entities.Contact;
+import edu.matko.soric.phonebook.repositories.ContactsRepository;
 import edu.matko.soric.phonebook.services.ContactsService;
+import edu.matko.soric.phonebook.services.ContactsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,8 +25,10 @@ import javax.validation.Valid;
 @SessionAttributes
 public class ContactsController {
 
+
     @Autowired
     private ContactsService contactsService;
+
 
     @RequestMapping("/")
     String index() {

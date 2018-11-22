@@ -18,7 +18,7 @@ public class ContactsServiceImpl implements ContactsService {
     }
 
     @Override
-    public Iterable<Contact> listAllContacts() {
+        public Iterable<Contact> listAllContacts() {
         return contactsRepository.findAll();
     }
 
