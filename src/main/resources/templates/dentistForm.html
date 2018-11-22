@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <title>Kontakti Aplikacija</title>
+    <title>Croatian Dentists Register</title>
 
     <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
     <link href= "https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
@@ -30,7 +30,7 @@
 
     <div id="header">
         <div id="logo">
-            <h1><a href="/">Phonebook Application</a></h1>
+            <h1><a href="/">Croatian Dentists Register</a></h1>
         </div>
     </div>
     <br>
@@ -38,7 +38,7 @@
     <h2>Edit details</h2>
 
     <div class="container" >
-        <form th:action="@{|/contact/edit/{id}|}" th:object="${contact}" method="post">
+        <form th:action="@{|/dentist/edit/{id}|}" th:object="${dentist}" method="post">
             <table align="center" width="100%">
                 <tr>
                     <th></th>
@@ -58,16 +58,16 @@
                     <td><input type="text" th:field="*{surname}" required="true"/></td>
                 </tr>
                 <tr>
-                    <td>Phone number: </td>
-                    <td><input type="text" th:field="*{phoneNumber}" required="true"/></td>
+                    <td>City: </td>
+                    <td><input type="text" th:field="*{city}" required="true"/></td>
                 </tr>
                 <tr>
-                    <td>E-mail: </td>
-                    <td><input type="text" th:field="*{email}" /></td>
+                    <td>Street: </td>
+                    <td><input type="text" th:field="*{street}" /></td>
                 </tr>
                 <tr>
-                    <td>Creation date: </td>
-                    <td><input type="date"  th:field="*{creationDate}" disabled="true"/></td>
+                    <td>Number of patients: </td>
+                    <td><input type="date"  th:field="*{number_of_patients}" disabled="true"/></td>
                 </tr>
             </table>
             <br>
@@ -77,9 +77,9 @@
             </div>
 
             <input type="submit" class="btn btn-primary btn-sm btn-info" value="Save" />
-            <a th:href="${ '/contact/edit/' + {id}}" class="btn btn-primary btn-sm btn-info">Reset</a>
-            <a th:href="@{/contacts}" class="btn btn-primary btn-sm btn-info">Cancel</a>
-            <a th:href="@{'/contact/new'}" class="btn btn-primary btn-sm btn-info">Add new entry</a>
+            <a th:href="${ '/dentist/edit/' + {id}}" class="btn btn-primary btn-sm btn-info">Reset</a>
+            <a th:href="@{/dentists}" class="btn btn-primary btn-sm btn-info">Cancel</a>
+            <a th:href="@{'/dentist/new'}" class="btn btn-primary btn-sm btn-info">Add new entry</a>
         </form>
     </div>
 

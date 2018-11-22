@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <title>Phonebook application</title>
+    <title>Croatian Dentists Register</title>
 
     <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
     <link href= "https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
@@ -35,7 +35,7 @@
 
     <div id="header">
         <div id="logo">
-            <h1><a href="/">Phonebook application</a></h1>
+            <h1><a href="/">Croatian Dentists Register</a></h1>
         </div>
 
     </div>
@@ -43,7 +43,7 @@
     <br>
     <!--<div id="page">-->
         <div class="container" style="width:900px;" align="center">
-            <div th:if="${not #lists.isEmpty(contacts)}">
+            <div th:if="${not #lists.isEmpty(dentists)}">
                 <h2>List of entries</h2>
                 <table id="dataTable" class="table">
                     <thead>
@@ -51,32 +51,32 @@
                         <th>Id</th>
                         <th>Name</th>
                         <th>Surname</th>
-                        <th>Phone number</th>
-                        <th>E-mail</th>
-                        <th>Creation date</th>
+                        <th>City</th>
+                        <th>Street</th>
+                        <th>Number of patients</th>
                         <th></th>
                         <th></th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="contact : ${contacts}">
-                        <td th:text="${contact.id}"></td>
-                        <td th:text="${contact.name}"></td>
-                        <td th:text="${contact.surname}"></td>
-                        <td th:text="${contact.phoneNumber}"></td>
-                        <td th:text="${contact.email}"></td>
-                        <td th:text="${contact.creationDate}"></td>
-                        <td><a th:href="${ '/contact/' + contact.id}" class="btn btn-primary btn-sm btn-info">Info</a></td>
-                        <td><a th:href="${ '/contact/edit/' + contact.id}" class="btn btn-primary btn-sm btn-info">Edit</a></td>
-                        <td><a th:href="${ '/contact/delete/' + contact.id}" class="delete btn btn-primary btn-sm btn-danger" type="button" data-title="Warning!" >Delete</a></td>
+                    <tr th:each="dentist : ${dentists}">
+                        <td th:text="${dentist.id}"></td>
+                        <td th:text="${dentist.name}"></td>
+                        <td th:text="${dentist.surname}"></td>
+                        <td th:text="${dentist.city}"></td>
+                        <td th:text="${dentist.street}"></td>
+                        <td th:text="${dentist.number_of_patients}"></td>
+                        <td><a th:href="${ '/dentist/' + dentist.id}" class="btn btn-primary btn-sm btn-info">Info</a></td>
+                        <td><a th:href="${ '/dentist/edit/' + dentist.id}" class="btn btn-primary btn-sm btn-info">Edit</a></td>
+                        <td><a th:href="${ '/dentist/delete/' + dentist.id}" class="delete btn btn-primary btn-sm btn-danger" type="button" data-title="Warning!" >Delete</a></td>
                     </tr>
                     </tbody>
                 </table>
             </div>
             <br>
 
-            <a th:href="@{'/contact/new'}" class="btn btn-primary btn-sm btn-info">Add new entry</a>
+            <a th:href="@{'/dentist/new'}" class="btn btn-primary btn-sm btn-info">Add new entry</a>
 
         </div>
         <div id="content">

@@ -1,4 +1,4 @@
-package edu.matko.soric.phonebook;
+package edu.matko.soric.dentists;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

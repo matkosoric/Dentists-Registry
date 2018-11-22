@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('#dataTable').DataTable(
     {
       "columnDefs": [
-        {       "targets": [0, 3, 4, 5 ],
+        {       "targets": [0, 5 ],
                 "searchable": false  }
       ]
     } );

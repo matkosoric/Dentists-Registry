@@ -1,4 +1,4 @@
-package edu.matko.soric.phonebook;
+package edu.matko.soric.dentists;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -36,35 +36,35 @@ public class ControllerTests {
 
 
     @Test
-    public void redirectContacts() throws Exception{
+    public void redirectDentists() throws Exception{
         this.mockMvc.perform(get("/"))
                 .andExpect(status().is3xxRedirection())
-                .andExpect(view().name("redirect:/contacts"))
+                .andExpect(view().name("redirect:/dentists"))
                 .andDo(print());
     }
 
     @Test
-    public void contactsList() throws Exception{
-        this.mockMvc.perform(get("/contacts"))
+    public void dentistsList() throws Exception{
+        this.mockMvc.perform(get("/dentists"))
                 .andExpect(status().is2xxSuccessful())
-                .andExpect(view().name("contacts"))
+                .andExpect(view().name("dentists"))
                 .andDo(print());
     }
 
     @Test
-    public void newContact() throws Exception{
-        this.mockMvc.perform(get("/contact/new"))
+    public void newDentist() throws Exception{
+        this.mockMvc.perform(get("/dentist/new"))
                 .andExpect(status().is2xxSuccessful())
-                .andExpect(view().name("contactForm"))
+                .andExpect(view().name("dentistForm"))
                 .andDo(print());
     }
 
 
     @Test
-    public void editContact() throws Exception{
-        this.mockMvc.perform(get("/contact/1"))
+    public void editDentist() throws Exception{
+        this.mockMvc.perform(get("/dentist/1"))
                 .andExpect(status().is2xxSuccessful())
-                .andExpect(view().name("showContact"))
+                .andExpect(view().name("showDentist"))
                 .andDo(print());
     }
 

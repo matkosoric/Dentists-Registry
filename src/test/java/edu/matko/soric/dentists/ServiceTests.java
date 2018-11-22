@@ -1,7 +1,7 @@
-package edu.matko.soric.phonebook;
+package edu.matko.soric.dentists;
 
-import edu.matko.soric.phonebook.entities.Contact;
-import edu.matko.soric.phonebook.services.ContactsService;
+import edu.matko.soric.dentists.entities.Dentist;
+import edu.matko.soric.dentists.services.DentistsService;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,33 +37,33 @@ public class ServiceTests {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
     }
     @Autowired
-    private ContactsService contactsService;
+    private DentistsService dentistsService;
 
 
     @Test
     public void serviceWriteAndRead() throws Exception {
 
-        Contact contact = new Contact ("matko", "sorić", "091/555-555", "soric.matko@gmail.com");
-        contactsService.saveContact(contact);
-        Optional<Contact> contactReturned = contactsService.getContactById(contact.getId());
+        Dentist dentist = new Dentist("matko", "sorić", "091/555-555", "soric.matko@gmail.com", 2000);
+        dentistsService.saveDentist(dentist);
+        Optional<Dentist> dentistReturned = dentistsService.getDentistById(dentist.getId());
 
-        assertThat (contact.equals(contactReturned));
+        assertThat (dentist.equals(dentistReturned));
 
     }
 
 
     @Test
-    public void serviceListAllContacts() throws Exception{
+    public void serviceListAllDentists() throws Exception{
 
-        assertThat(this.contactsService).isNotNull();
+        assertThat(this.dentistsService).isNotNull();
 
-        Iterable<Contact> contactList = contactsService.listAllContacts();
+        Iterable<Dentist> dentistList = dentistsService.listAllDentists();
 
-        mockMvc.perform(get("/contacts"))
+        mockMvc.perform(get("/dentists"))
                     .andExpect(status().isOk())
                     .andExpect(content().contentType("text/html;charset=UTF-8"))
-                    .andExpect(view().name("contacts"))
-                    .andExpect(model().attributeExists("contacts"))
+                    .andExpect(view().name("dentists"))
+                    .andExpect(model().attributeExists("dentists"))
                     .andExpect(model().size(1))
                     .andExpect(content().string(Matchers.containsString("matko")))
                     .andDo(print());

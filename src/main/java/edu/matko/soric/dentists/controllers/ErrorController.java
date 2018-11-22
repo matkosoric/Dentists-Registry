@@ -1,4 +1,4 @@
-package edu.matko.soric.phonebook.controllers;
+package edu.matko.soric.dentists.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
