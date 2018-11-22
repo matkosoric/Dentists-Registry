@@ -17,6 +17,7 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login")
+                .defaultSuccessUrl("/dentists")
                 .failureUrl("/login-error.html")
                 .permitAll()
                 .and()
