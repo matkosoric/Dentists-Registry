@@ -2,7 +2,6 @@ package edu.matko.soric.dentists;
 
 import edu.matko.soric.dentists.entities.Dentist;
 import edu.matko.soric.dentists.services.DentistsService;
-import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,9 +15,7 @@ import org.springframework.web.context.WebApplicationContext;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.assertj.core.api.Assertions.not;
 
 
 @RunWith(SpringRunner.class)
@@ -36,7 +33,7 @@ public class ServiceTests {
     @Before
     public void setup() {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
-        dentistSaved = new Dentist("Matko", "Sorić", "Zagreb", "Trg Bana Jelačića 1", 2103);
+        dentistSaved = new Dentist("Stu", "Price", "Zagreb", "Trg Bana Jelačića 1", 2103);
         dentistUnsaved = new Dentist("Hulk", "Hogan", "Los Angeles", "Fairfax 41", 8000);
     }
 
@@ -51,13 +48,19 @@ public class ServiceTests {
         Optional<Dentist> dentistReturned = dentistsService.getDentistById(dentistSaved.getId());
 
         assertThat (dentistSaved.equals(dentistReturned));
-
     }
 
 
+    @Test
+    public void serviceDelete() throws Exception {
 
+        dentistsService.saveDentist(dentistSaved);
+        dentistsService.deleteDentist(dentistSaved.getId());
 
+        Optional<Dentist> dentistReturned = dentistsService.getDentistById(dentistSaved.getId());
 
+        assertThat (dentistReturned.equals(Optional.empty()));
 
+    }
 
 }
