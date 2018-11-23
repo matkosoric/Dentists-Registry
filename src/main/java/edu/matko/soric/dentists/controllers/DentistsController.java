@@ -42,25 +42,25 @@ public class DentistsController {
         return "dentists";
     }
 
-    @RequestMapping (value= "dentist/{id}", method=RequestMethod.GET)
+    @RequestMapping (value= "/dentist/{id}", method=RequestMethod.GET)
     public String showDentist (@PathVariable Integer id, Model model) {
         model.addAttribute("dentist", dentistsService.getDentistById(id));
         return "showDentist";
     }
 
-    @RequestMapping (value = "dentist/edit/{id}", method=RequestMethod.GET)
+    @RequestMapping (value = "/dentist/edit/{id}", method=RequestMethod.GET)
     public String edit (@PathVariable Integer id, Model model) {
         model.addAttribute("dentist", dentistsService.getDentistById(id));
         return "dentistForm";
     }
 
-    @RequestMapping (value = "dentist/new", method=RequestMethod.GET)
+    @RequestMapping (value = "/dentist/new", method=RequestMethod.GET)
     public String newDentist (Model model) {
         model.addAttribute("dentist", new Dentist());
         return "dentistForm";
     }
 
-    @RequestMapping (value = "dentist/edit/{id}", method = RequestMethod.POST)
+    @RequestMapping (value = "/dentist/edit/{id}", method = RequestMethod.POST)
     public String saveDentist (@Valid @ModelAttribute("dentist") Dentist dentist, BindingResult bindingResult, ModelMap model) {
 
         Integer id = dentist.getId();
@@ -72,7 +72,7 @@ public class DentistsController {
         return "redirect:/dentist/edit/" + dentist.getId();
     }
 
-    @RequestMapping (value = "dentist/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping (value = "/dentist/delete/{id}", method = RequestMethod.DELETE)
     public String deleteDentist (@PathVariable Integer id) {
         dentistsService.deleteDentist(id);
         return "redirect:/dentists";
