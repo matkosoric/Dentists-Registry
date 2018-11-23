@@ -2,7 +2,9 @@ package edu.matko.soric.dentists.controllers;
 
 import edu.matko.soric.dentists.entities.Dentist;
 import edu.matko.soric.dentists.services.DentistsService;
+import org.aspectj.lang.annotation.Before;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,13 +22,17 @@ import javax.validation.Valid;
 @SessionAttributes
 public class DentistsController {
 
-
     @Autowired
     private DentistsService dentistsService;
 
 
-    @RequestMapping("/")
-    String index() {
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String home() {
+        return "redirect:/dentists";
+    }
+
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index() {
         return "redirect:/dentists";
     }
 
@@ -48,7 +54,7 @@ public class DentistsController {
         return "dentistForm";
     }
 
-    @RequestMapping (value = "dentist/new")
+    @RequestMapping (value = "dentist/new", method=RequestMethod.GET)
     public String newDentist (Model model) {
         model.addAttribute("dentist", new Dentist());
         return "dentistForm";
@@ -66,7 +72,7 @@ public class DentistsController {
         return "redirect:/dentist/edit/" + dentist.getId();
     }
 
-    @RequestMapping (value = "dentist/delete/{id}")
+    @RequestMapping (value = "dentist/delete/{id}", method = RequestMethod.DELETE)
     public String deleteDentist (@PathVariable Integer id) {
         dentistsService.deleteDentist(id);
         return "redirect:/dentists";

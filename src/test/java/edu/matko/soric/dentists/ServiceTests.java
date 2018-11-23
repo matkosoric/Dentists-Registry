@@ -8,7 +8,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -24,7 +23,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@TestPropertySource(properties = {"security.basic.enabled=false", "management.security.enabled=false"})
 public class ServiceTests {
 
     @Autowired
@@ -32,10 +30,16 @@ public class ServiceTests {
 
     private MockMvc mockMvc;
 
+    private Dentist dentistSaved;
+    private Dentist dentistUnsaved;
+
     @Before
     public void setup() {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
+        dentistSaved = new Dentist("Matko", "Sorić", "Zagreb", "Trg Bana Jelačića 1", 2103);
+        dentistUnsaved = new Dentist("Hulk", "Hogan", "Los Angeles", "Fairfax 41", 8000);
     }
+
     @Autowired
     private DentistsService dentistsService;
 
@@ -43,31 +47,17 @@ public class ServiceTests {
     @Test
     public void serviceWriteAndRead() throws Exception {
 
-        Dentist dentist = new Dentist("matko", "sorić", "091/555-555", "soric.matko@gmail.com", 2000);
-        dentistsService.saveDentist(dentist);
-        Optional<Dentist> dentistReturned = dentistsService.getDentistById(dentist.getId());
+        dentistsService.saveDentist(dentistSaved);
+        Optional<Dentist> dentistReturned = dentistsService.getDentistById(dentistSaved.getId());
 
-        assertThat (dentist.equals(dentistReturned));
+        assertThat (dentistSaved.equals(dentistReturned));
 
     }
 
 
-    @Test
-    public void serviceListAllDentists() throws Exception{
 
-        assertThat(this.dentistsService).isNotNull();
 
-        Iterable<Dentist> dentistList = dentistsService.listAllDentists();
 
-        mockMvc.perform(get("/dentists"))
-                    .andExpect(status().isOk())
-                    .andExpect(content().contentType("text/html;charset=UTF-8"))
-                    .andExpect(view().name("dentists"))
-                    .andExpect(model().attributeExists("dentists"))
-                    .andExpect(model().size(1))
-                    .andExpect(content().string(Matchers.containsString("matko")))
-                    .andDo(print());
-    }
 
 
 }
