@@ -4,8 +4,8 @@ Croatian dentists registry 2015 web application
 
 This is a CRUD application intended to provide user-friendly searching capabilities of a small dataset about dentists. It has a login screen, main searching form, view form with out enabled editing, view form with enabled editing, and similar form for entering new data. Dentists can be searched by name, surname, city and street; fifth column contains number of patients, but is not searchable. There are slightly over 2000 entries in the dataset, and since I did not integrated pagination, it takes some time to load the main screen, depending on the client machine. CSV file and SQL scripts for importing are located at src/main/resources.   
 
-Login credentials are:
-Username: root
+Login credentials are:    
+Username: root    
 Password: root
 
 

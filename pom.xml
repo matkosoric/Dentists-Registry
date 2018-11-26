@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>edu.matko.soric.demo</groupId>
-	<artifactId>Spring Boot MVC</artifactId>
+	<groupId>edu.matko.soric.dentists</groupId>
+	<artifactId>Dentists Registry</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>kontakti.aplikacija</name>
-	<description>Demo project for Spring Boot</description>
+	<name>Dentists Registry 2015</name>
+	<description>Searching a list of dentists by name, surname, city, and street</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
