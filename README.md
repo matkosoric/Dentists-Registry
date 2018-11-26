@@ -26,7 +26,10 @@ These datasets are lists of doctors grouped by four criteria: medical protection
 
 ### Screenshots
 
-![Ratio of Dentists and Patients by City on a Scatter Plot - Matko Soric](https://raw.githubusercontent.com/matkosoric/Data-Visualizations/master/Impala/Dentists/DentistPatientRatiobyCity.png?raw=true "Ratio of Dentists and Patients by City on a Scatter Plot")
+![Croatian Dentists Register - Login Screen - Matko Soric](https://raw.githubusercontent.com/matkosoric/Dentists-Registry/master/src/main/resources/screenshots/CDR1.png?raw=true "Croatian Dentists Register - Login Screen - Matko Soric")
       
-![Ratio of Private and Public Dentists by City - Matko Soric](https://raw.githubusercontent.com/matkosoric/Data-Visualizations/master/Impala/Dentists/PrivatePublicDentistsByCity.png?raw=true "Ratio of Private and public dentists by City")
-    
+![Croatian Dentists Register - Search - Matko Soric](https://raw.githubusercontent.com/matkosoric/Dentists-Registry/master/src/main/resources/screenshots/CDR2.png?raw=true "Croatian Dentists Register - Search - Matko Soric")
+
+![Croatian Dentists Register - View Detils - Matko Soric](https://raw.githubusercontent.com/matkosoric/Dentists-Registry/master/src/main/resources/screenshots/CDR3.png?raw=true "Croatian Dentists Register - View Detils - Matko Soric")
+
+![Croatian Dentists Register - Edit Details - Matko Soric](https://raw.githubusercontent.com/matkosoric/Dentists-Registry/master/src/main/resources/screenshots/CDR4.png?raw=true "Croatian Dentists Register - Edit Details - Matko Soric")
