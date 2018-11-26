@@ -25,9 +25,8 @@ These datasets are lists of doctors grouped by four criteria: medical protection
  
 
 ### Screenshots
-
-![Croatian Dentists Register - Login Screen - Matko Soric](https://raw.githubusercontent.com/matkosoric/Dentists-Registry/master/src/main/resources/screenshots/CDR1.png?raw=true "Croatian Dentists Register - Login Screen - Matko Soric")
-      
+![Croatian Dentists Register - Login Screen - Matko Soric](https://raw.githubusercontent.com/matkosoric/Dentists-Registry/master/src/main/resources/screenshots/CDR1.png?raw=true?style=centerme "Croatian Dentists Register - Login Screen - Matko Soric")
+ 
 ![Croatian Dentists Register - Search - Matko Soric](https://raw.githubusercontent.com/matkosoric/Dentists-Registry/master/src/main/resources/screenshots/CDR2.png?raw=true "Croatian Dentists Register - Search - Matko Soric")
 
 ![Croatian Dentists Register - View Detils - Matko Soric](https://raw.githubusercontent.com/matkosoric/Dentists-Registry/master/src/main/resources/screenshots/CDR3.png?raw=true "Croatian Dentists Register - View Detils - Matko Soric")
